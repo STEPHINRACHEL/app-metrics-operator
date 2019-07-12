@@ -5,7 +5,7 @@ import (
 	"time"
 
 	apis "github.com/aerogear/app-metrics-operator/pkg/apis"
-	pushv1alpha1 "github.com/aerogear/app-metrics-operator/pkg/apis/metrics/v1alpha1"
+	metricsv1alpha1 "github.com/aerogear/app-metrics-operator/pkg/apis/metrics/v1alpha1"
 	framework "github.com/operator-framework/operator-sdk/pkg/test"
 	"github.com/operator-framework/operator-sdk/pkg/test/e2eutil"
 )
@@ -18,7 +18,7 @@ var (
 )
 
 func TestAppMetrics(t *testing.T) {
-	appMetricsList := &pushv1alpha1.AppMetricsServiceList{}
+	appMetricsList := &metricsv1alpha1.AppMetricsServiceList{}
 	if err := framework.AddToFrameworkScheme(apis.AddToScheme, appMetricsList); err != nil {
 		t.Fatalf("failed to add custom resource scheme to framework: %v", err)
 	}
